@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <title></title>
+    <!--使用CDN方式引入Vue.js-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <!--创建了一个id为App的div标签-->
+    <div id="app">
+      <!--是用来输出Vue对象中的message值。如果message内容改变，这里输出也会改变。-->
+      {{message}}
+    </div>
+    <script>
+      /*在script标签内，创建了Vue实例对象，该对象中有两个属性：el和data。el属性的作用是将Vue实例绑定到id为App的DOM中，data用于数据的存储*/
+      var app = new Vue({
+        el: "#app",
+        data: {
+          message: "Hello, world!",
+        },
+      });
+    </script>
+  </body>
+</html>
