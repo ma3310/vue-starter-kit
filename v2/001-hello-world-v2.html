@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <title>Hello, Vue!</title>
+    <!-- 开发版 Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <!-- Vue 绑定元素，渲染一次 -->
+    <div v-once id="vue">
+      <!-- 直接绑定 -->
+      <p>{{ message }}</p>
+
+    </div>
+    <script>
+      /*  */
+      let vue = new Vue({
+        el: "#vue",
+        data: {
+          message: "Hello, Vue!",
+        },
+      });
+    </script>
+  </body>
+</html>

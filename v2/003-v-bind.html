@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello, Vue!</title>
+    <!-- 开发版 Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="style/common.css">
+  </head>
+  <body>
+    <!-- Vue 绑定元素 -->
+    <div id="vue">
+      <!-- v-bind 主要绑定元素属性：图片、URL等 -->
+      <img v-bind:src="imgURL"/>
+      <a target="_blank" :href="baiduURL">百度搜索</a>
+
+      <!-- v-bind 可以指定内联对象或属性为对象的属性名，
+                  参考相关对象属性值的真假性，返回元素属性值 -->
+      <div v-bind:class="{ active: itema1Active }">Item1</div>
+      <div v-bind:class="item2Active">Item2</div>
+
+      <!-- v-bind 用于 class 和 style 时，Vue.js 做了专门的增强，生成内联样式-。 -->
+      
+    </div>
+    <script>
+      /*  */
+      let vue = new Vue({
+        el: "#vue",
+        data: {
+          imgURL: 'https://picsum.photos/200',
+          baiduURL: 'https://www.baidu.com/',
+          itema1Active: true,
+          item2Active: {
+            active: false,
+            'text-danger': true,
+          }
+        },
+      });
+    </script>
+
+  </body>
+</html>
