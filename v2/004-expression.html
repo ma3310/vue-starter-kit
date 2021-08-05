@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <title>{} expression</title>
+    <!-- 开发版 Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <!-- Vue 绑定元素 -->
+    <div id="vue">
+      <!-- 绑定 + 计算 -->
+      <p> number + 1 : {{ number + 1 }}</p>
+      <hr>
+      <p>{{string + '~~~~~'}}</p>
+      <hr>
+      <p>{{flag ? 'flag == true' : '条件为假'}}</p>
+    </div>
+
+    <script>
+      /*  */
+      let vue = new Vue({
+        el: "#vue",
+        data: {
+            number: 2,
+            string:'Hello beixi!',
+            flag: true,
+        },
+      });
+    </script>
+  </body>
+</html>
