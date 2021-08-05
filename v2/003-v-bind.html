@@ -8,32 +8,62 @@
     <link rel="stylesheet" href="style/common.css">
   </head>
   <body>
-    <!-- Vue 绑定元素 -->
+    <!-- Vue 绑定元素属性 -->
     <div id="vue">
       <!-- v-bind 主要绑定元素属性：图片、URL等 -->
       <img v-bind:src="imgURL"/>
-      <a target="_blank" :href="baiduURL">百度搜索</a>
 
-      <!-- v-bind 可以指定内联对象或属性为对象的属性名，
-                  参考相关对象属性值的真假性，返回元素属性值 -->
-      <div v-bind:class="{ active: itema1Active }">Item1</div>
-      <div v-bind:class="item2Active">Item2</div>
+      <!-- v-bind 绑定元素属性时可以省略，只留下冒号 -->
+      <a target="_blank" :href="baiduURL">百度搜索（v-bind 绑定 href 属性）</a>
 
-      <!-- v-bind 用于 class 和 style 时，Vue.js 做了专门的增强，生成内联样式-。 -->
-      
+      <!-- v-bind 用于 class 和 style 时，Vue.js 做了专门的增强，生成 class 名字符串或内联样式 -->
+      <!-- v-bind 绑定 class 时：
+           - 可以直接写入内联对象
+           - 可以指定类型为对象的全局 Vue 对象的 data 对象的属性名
+           - 可以指定能产生返回值为对象的函数的全局 Vue 对象的 computed 对像的函数的属性名
+           参考对象属性值的真假，返回对象的属性名作为 class 的值 -->
+      <div v-bind:class="{ active: itemActive }"> div（v-bind:class 生成样式名 div.active）</div>
+      <div v-bind:class="divClassName">div（v-bind:class 按绑定对象生成样式名 div.text-danger）</div>
+
+      <!-- v-bind 绑定 style 时，根据传入对象的属性名及属性值生成内联样式, v-bind 可以省略 -->
+      <div :style="{'color': color,'fontSize':fontSize + 'px'}">div (v-bind:style 修饰)</div>
+      <div :style="[divStyleObjA, divStyleObjB]">div (v-bind:style [绑定多个, 样式对象])</div>
+  
     </div>
+
     <script>
       /*  */
       let vue = new Vue({
         el: "#vue",
         data: {
-          imgURL: 'https://picsum.photos/200',
-          baiduURL: 'https://www.baidu.com/',
-          itema1Active: true,
-          item2Active: {
+
+          // 对应的属性名作为样式名返回
+          itemActive: true,
+          
+          // 返回样式名 div.text-danger
+          divClassName: {
             active: false,
             'text-danger': true,
-          }
+          },
+
+          // v-bind:style 用
+          color: 'red',
+          fontSize: 24, 
+
+          // v-bind:style
+          divStyleObjA:{
+              color: 'red',
+              fontSize: 24 + 'px'
+          },
+
+          divStyleObjB: {
+              width: 800 + 'px',
+              border: 1 + 'px ' + 'black ' + 'solid'
+          },
+
+          // 第一张图片及 baidu 链接
+          imgURL: 'https://picsum.photos/200',
+          baiduURL: 'https://www.baidu.com/',
         },
       });
     </script>
