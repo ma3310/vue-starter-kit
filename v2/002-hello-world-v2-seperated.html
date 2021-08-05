@@ -13,6 +13,9 @@
       <p v-html="greetingHTML"></p>
       <!-- 带过滤器 -->
       <p>双括号绑定数据可带过滤器进行格式化 {{ price | currencyChineseYuan }}</p>
+      <p> 37 摄氏度，= 华氏 {{ 37 | celsius2fahrenheit }} 度</p>
+      <p> 38 摄氏度，= 华氏 {{ 38 | celsius2fahrenheit }} 度</p>
+      <p> 39 摄氏度，= 华氏 {{ 39 | celsius2fahrenheit }} 度</p>
     </div>
     <script src="js/002-main.js"></script>
   </body>

@@ -1,3 +1,9 @@
+
+// 设置全局过滤器
+Vue.filter("celsius2fahrenheit", (value)=>{
+  return value * 9 / 5 + 32;
+})
+
 /* Vue 实例 */
 var vue = new Vue({
   el: "#vue",                 // DOM 选择器，选择 HTML 元素绑定 vue 实例
