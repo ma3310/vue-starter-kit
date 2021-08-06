@@ -2,7 +2,7 @@
 <html>
   <head lang="en">
     <meta charset="UTF-8" />
-    <title>Vue 绑定</title>
+    <title>Vue {{ }} 绑定</title>
     <!-- 生产版 Vue.js -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
   </head>
@@ -10,7 +10,9 @@
     <!-- Vue 绑定 DOM 元素 -->
     <div id="vue">
       <!-- 绑定 HTML 内容 -->
-      <p v-html="greetingHTML"></p>
+      p 元素，内容完整替换
+      <p v-html="greetingHTML"><span>仅占位作用</span></p>
+
       <!-- 带过滤器 -->
       <p>双括号绑定数据可带过滤器进行格式化 {{ price | currencyChineseYuan }}</p>
       <p> 37 摄氏度，= 华氏 {{ 37 | celsius2fahrenheit }} 度</p>

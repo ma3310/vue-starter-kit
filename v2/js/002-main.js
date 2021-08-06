@@ -5,7 +5,7 @@ Vue.filter("celsius2fahrenheit", (value)=>{
 })
 
 /* Vue 实例 */
-var vue = new Vue({
+const vue = new Vue({ // devtool 里通过 vue.$data 访问
   el: "#vue",                 // DOM 选择器，选择 HTML 元素绑定 vue 实例
 
   data: {
