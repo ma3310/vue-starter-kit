@@ -15,12 +15,14 @@
   <body>
     <!-- Vue 绑定元素 -->
     <div id="vue">
-        
+      <label>v-model bind: </label><input type="text" v-model="greeting" size="50" />
+      <button v-on:click="log_now">click to log time</button>
+
+      <div>
+        <p>{{startTimeInUTC}}</p>
+        <input type="text" v-model="startTime" size="80" />
+      </div>
     </div>
-
-    <script>
-
-    </script>
     <script type="module" src="js/000-common.js"></script>
   </body>
 </html>

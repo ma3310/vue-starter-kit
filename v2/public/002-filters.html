@@ -16,7 +16,7 @@
     <!-- Vue 绑定 DOM 元素 -->
     <div id="vue">
       <!-- 绑定 HTML 内容 -->
-      p 元素，内容完整替换
+      p 元素，设置 v-html 后，内容 innerHTML 全部替换
       <p v-html="greetingHTML"><span>仅占位作用</span></p>
 
       <!-- 带过滤器 -->
@@ -25,6 +25,6 @@
       <p> 38 摄氏度，= 华氏 {{ 38 | celsius2fahrenheit }} 度</p>
       <p> 39 摄氏度，= 华氏 {{ 39 | celsius2fahrenheit }} 度</p>
     </div>
-    <script type="module" src="js/002-main.js"></script>
+    <script type="module" src="js/000-common.js"></script>
   </body>
 </html>

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style/common.css">
   </head>
   <body>
-    <!-- Vue 绑定元素属性 -->
+    <!-- Vue 绑定 data 和元素属性 -->
     <div id="vue">
       <!-- v-bind 主要绑定元素属性：图片、URL等 -->
       <img v-bind:src="imgURL"/>
@@ -33,7 +33,7 @@
 
     <script>
       /*  */
-      let vue = new Vue({
+      const vue = new Vue({
         el: "#vue",
         data: {
 
