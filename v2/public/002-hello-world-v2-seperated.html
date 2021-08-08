@@ -4,7 +4,13 @@
     <meta charset="UTF-8" />
     <title>Vue {{ }} 绑定</title>
     <!-- 生产版 Vue.js -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script type="importmap">
+      { "imports": {
+        "vue":        "https://cdn.jsdelivr.net/npm/vue/dist/vue.esm.browser.min.js",
+        "vue-router": "https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.esm.browser.min.js",
+        "vuex":       "https://cdn.jsdelivr.net/npm/vuex/dist/vuex.esm.browser.min.js"
+      } }
+    </script>
   </head>
   <body>
     <!-- Vue 绑定 DOM 元素 -->
@@ -19,6 +25,6 @@
       <p> 38 摄氏度，= 华氏 {{ 38 | celsius2fahrenheit }} 度</p>
       <p> 39 摄氏度，= 华氏 {{ 39 | celsius2fahrenheit }} 度</p>
     </div>
-    <script src="js/002-main.js"></script>
+    <script type="module" src="js/002-main.js"></script>
   </body>
 </html>

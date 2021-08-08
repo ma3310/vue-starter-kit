@@ -1,3 +1,4 @@
+import Vue from 'vue'
 
 // 设置全局过滤器
 Vue.filter("celsius2fahrenheit", (value)=>{
@@ -21,3 +22,6 @@ const vue = new Vue({ // devtool 里通过 vue.$data 访问
     }
   }
 });
+
+console.log(vue);
+window.vue = vue;
