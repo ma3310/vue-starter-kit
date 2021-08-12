@@ -2,7 +2,7 @@
 <html>
   <head lang="en">
     <meta charset="UTF-8" />
-    <title></title>
+    <title>computed &amp; methods</title>
     <!-- 开发版 Vue.js -->
     <script type="importmap">
       { "imports": {
@@ -15,11 +15,13 @@
   <body>
     <!-- Vue 绑定元素 -->
     <div id="vue">
+      <p><span v-pre>call method log() through {{</span> {{log('page start #Vue')}}</p>
       <label>v-model bind: </label><input type="text" v-model="greeting" size="50" />
-      <button v-on:click="log_now">click to log time</button>
+      <button v-on:click="log">click to log time</button>
 
       <div>
-        <p>{{startTimeInUTC}}</p>
+        <p>{{startTimeInUTC}} first </p>
+        <p>{{startTimeInUTC}} second: only one log in console</p>
         <input type="text" v-model="startTime" size="80" />
       </div>
     </div>

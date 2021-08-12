@@ -37,6 +37,7 @@ const vue = new Vue({
         startTime: new Date(),
         price: 100,             // 价格
         degreeInCelsius: 37,    // 摄氏度
+        employees: [],          // 选中的员工
     },
 
     filters: {
@@ -46,7 +47,14 @@ const vue = new Vue({
     },
 
     computed: {
+        /**
+         * 仅当依赖值变化时被执行
+         *
+         * @returns {string}
+         */
         startTimeInUTC () {
+            this.log("computed:startTimeInUTC");
+
             if (typeof this.startTime === "string") {
                 this.startTime = new Date(this.startTime);
                 return this.startTime.toUTCString();
@@ -55,13 +63,15 @@ const vue = new Vue({
                 return this.startTime.toUTCString();
             }
         },
+
     },
 
     methods: {
-        // v-on:click="now" 绑定 #vue 内元素
-        log_now (isConsoleLog = true) {
+        // 通过 v-on:click="now" 可绑定 #vue 内元素
+        log (content = "", isConsoleLog = true) {
             if (isConsoleLog) {
-                console.log(new Date().toLocaleTimeString());
+                content = new Date().toLocaleTimeString() + ' ' + content;
+                console.log(content);
             }
         },
     },
