@@ -5,3 +5,7 @@ div.active {
 div.text-danger {
   color: crimson;
 }
+
+.comment {
+  color: green;
+}

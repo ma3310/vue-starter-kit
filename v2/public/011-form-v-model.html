@@ -11,20 +11,21 @@
         "vuex":       "https://cdn.jsdelivr.net/npm/vuex/dist/vuex.esm.browser.js"
       } }
     </script>
+    <link rel="stylesheet" href="style/common.css">
   </head>
   <body>
     <!-- Vue 绑定元素 -->
     <div id="vue">
-      <p><u>多选框</u>绑定同一 Vue 实例的 data 属性, 接收元素值</p>
+      <p class="comment"><u>多选框</u>通过 v-model 属性绑定同一 Vue 实例的 data 属性成员 employees, 接收元素值⬇⬇️↡ꜜ˅⌄˯⇩⬎🢃🢛🡻</p>
       <div id="example-checkboxs" class="demo">
-        <input type="checkbox" id="jack" value="Jack" v-model="employees">
         <label for="jack">Jack</label>
-        <input type="checkbox" id="john" value="John" v-model="employees">
+        <input type="checkbox" id="jack" value="Jack" v-model="employees">
         <label for="john">John</label>
-        <input type="checkbox" id="mike" value="Mike" v-model="employees">
+        <input type="checkbox" id="john" value="John" v-model="employees">
         <label for="mike">Mike</label>
+        <input type="checkbox" id="mike" value="Mike" v-model="employees">
         <br>
-        <span>Checked names: {{ employees }}</span>
+        <div>Checked names: {{ employees }} <span class="comment" >⬅️⮈ 用 <code v-pre>{{ employees }}</code> 动态显示最新 employees 的值</span></div>
       </div>
     </div>
 
